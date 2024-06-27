@@ -3,16 +3,16 @@ package de.locke.food.ordering.system.domain.entity
 import java.util.*
 
 
-abstract class BaseEntity<ID>() {
-    private var id: ID? = null
+abstract class BaseEntity<ID>(
+    private val id: ID
+) {
 
-    fun getId(): ID? {
-        return id
-    }
+    val baseId: ID
+        get() = id
 
-    fun setId(id: ID) {
-        this.id = id
-    }
+//    fun getId(): ID {
+//        return id
+//    }
 
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
